@@ -56,6 +56,7 @@ void MainWindow::on_pushButton_clicked()
 {
 
     test();
+    this->close();
 
     QString login = ui->login->text();
     QString password = ui->password->text();
@@ -64,7 +65,7 @@ void MainWindow::on_pushButton_clicked()
         ui->statusbar->showMessage("Вы успешно авторизовались");
 
         showToWindow();
-        this->close();
+
 
    } else {
          ui->statusbar->showMessage("Авторизация не успешна");
