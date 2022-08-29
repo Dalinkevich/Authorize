@@ -16,10 +16,10 @@
   <widget class="QLabel" name="resultLabel">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>99</y>
-     <width>531</width>
-     <height>101</height>
+     <x>130</x>
+     <y>130</y>
+     <width>321</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
@@ -32,6 +32,25 @@
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="time">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>290</y>
+     <width>311</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Time</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+   <property name="margin">
+    <number>5</number>
    </property>
   </widget>
  </widget>

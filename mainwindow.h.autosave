@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-//подгружаем нужные классы
 #include <firstclass.h>
 #include <secondclass.h>
 #include <form.h>
@@ -41,7 +40,6 @@ private:
     // экзкмпляры классов
     FirstClass *firstClass {};
     SecondClass *secondClass {};
-
     QTimer *timer;
     Form *form;
 };
