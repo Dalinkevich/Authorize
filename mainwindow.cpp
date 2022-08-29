@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     secondClass = new SecondClass();
     form = new Form();
 
-    form->show();
+
 
     //Новый метод connect
     connect(this, &MainWindow::firstSignal, firstClass, &FirstClass::firstSlot);
@@ -56,13 +56,15 @@ void MainWindow::on_pushButton_clicked()
 {
 
     test();
-    this->close();
+
 
     QString login = ui->login->text();
     QString password = ui->password->text();
 
     if(login == "123456" && password == "qwerty") {
         ui->statusbar->showMessage("Вы успешно авторизовались");
+        form->show();
+        this->close();
 
         showToWindow();
 
