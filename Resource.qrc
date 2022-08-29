@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/Resource">
+        <file>Images/Authorize.png</file>
+    </qresource>
+</RCC>
