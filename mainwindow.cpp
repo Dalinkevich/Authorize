@@ -38,10 +38,9 @@ MainWindow::MainWindow(QWidget *parent)
     form = new Form();
     timer = new QTimer();
 
-
-    //Время запуска приложения
-    qDebug() << QTime::currentTime().toString("hh:mm:ss") << endl;
-
+    //Settings
+    settings = new QSettings(this);
+    loadSettings();
 
     connect(this, &MainWindow::firstSignal, firstClass, &FirstClass::firstSlot);
     connect(this, &MainWindow::secondSignal, secondClass, &SecondClass::secondSlot);
@@ -49,18 +48,36 @@ MainWindow::MainWindow(QWidget *parent)
     connect(timer, SIGNAL(timeout()), this, SLOT(slotTimerAlarm()));
 
     timer->start(1000);
+
 }
 
 MainWindow::~MainWindow()
 {
+    saveSettings();
     delete ui;
+}
+
+
+//MARK: QSettings
+void MainWindow::saveSettings()
+{
+    settings->beginGroup("Closing_APP");
+    settings->setValue("Application_closing_time", QTime::currentTime().toString("hh:mm:ss"));
+    settings->endGroup();
+}
+
+void MainWindow::loadSettings()
+{
+   qDebug() << settings->fileName() << endl;
+   settings->beginGroup("Launching_APP");
+   settings->setValue("Application_launching_time", QTime::currentTime().toString("hh:mm:ss"));
+   settings->endGroup();
 }
 
 
 
 void MainWindow::test()
 {
-    qDebug() << "Слот test запущен" << endl;
     emit firstSignal(ui->login->text());
     emit secondSignal(ui->password->text());
 

@@ -33,7 +33,6 @@ Form::~Form()
 void Form::slotToTwoWindow(QString login)
 {
     ui->resultLabel->setText("Пользователь-  " + login + "  Авторизовался");
-    qDebug() << "второе окно дебаг " << login;
     ui->time->setText("Первое окно было закрыто: " + QTime::currentTime().toString("hh:mm:ss"));
 
 }

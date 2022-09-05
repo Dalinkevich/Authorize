@@ -2,10 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-//подгружаем нужные классы
 #include <firstclass.h>
 #include <secondclass.h>
 #include <form.h>
+#include <QSettings>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,6 +18,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void saveSettings();
+    void loadSettings();
 
 public slots:
     void test();
@@ -41,8 +43,9 @@ private:
     // экзкмпляры классов
     FirstClass *firstClass {};
     SecondClass *secondClass {};
-
     QTimer *timer;
     Form *form;
+
+    QSettings *settings;
 };
 #endif // MAINWINDOW_H
